@@ -1,5 +1,7 @@
 from igraph import Graph
 from itertools import combinations
+from subcn import subcn
+
 """
 check_wn_on_v(g, v, n)
 
@@ -18,12 +20,12 @@ on v.
 
 """
 def check_wn_on_v(g, v, n):
+
     neighbors = g.neighbors(v)
     tire_g = g.induced_subgraph(neighbors)
+
     #NOW CHECK FOR CYCLE OF LENGTH N IN TIRE!
-
-
-
+    return subcn(tire_g, n)
 
 """
 subpn(g, n)
