@@ -12,10 +12,4 @@ def subpn(g,n):
 	else:
 		return False
 
-#test cases
-g = GraphBase()
-g.add_vertices(4)
-g.add_edges([(0,1),(0,2),(0,3)])
-print(subpn(g,3) )
-print(subpn(g,2) )
-#print (g.path_length_hist()[0])
+

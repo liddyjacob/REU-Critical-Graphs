@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+from argparse import ArgumentParser
+from os import system
+from sys import stdin
+from sys import stdout
+
+from subcn import subcn
+from subkn import subkn
+from subpn import subpn
+from subwn import subwn
+
+from filterg import filterg
+
+parser = ArgumentParser()
+parser.add_argument('-K', type = int, default = 0)
+parser.add_argument('-P', type = int, default = 0)
+parser.add_argument('-C', type = int, default = 0)
+parser.add_argument('-W', type = int, default = 0)
+
+args = parser.parse_args()
+
+kn = args.K
+pn = args.P
+cn = args.C
+wn = args.W
+
+#print kn, pn, wn, cn
+n = 0;
+f = None
+
+if kn > 0:
+    f = subkn
+if pn > 0:
+    f = subpn
+if cn > 0:
+    f = subcn
+if wn > 0:
+    pass
+    #f = subwn
+
+stdout.write(str(filterg(stdin, f)))
+#for line in stdin:
+    #print line
