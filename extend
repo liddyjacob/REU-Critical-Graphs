@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+from argparse import ArgumentParser
+from os import system
+from sys import stdin
+from sys import stdout
+
+from subcn import subcn
+from subkn import subkn
+from subpn import subpn
+from subwn import subwn
+
+from extendg import extendg
+
+parser = ArgumentParser()
+
+
+parser.add_argument('-K', type = int, default = 0)
+parser.add_argument('-P', type = int, default = 0)
+parser.add_argument('-C', type = int, default = 0)
+parser.add_argument('-W', type = int, default = 0)
+parser.add_argument('-cK', type = int, default = 0)
+parser.add_argument('-cP', type = int, default = 0)
+parser.add_argument('-cC', type = int, default = 0)
+parser.add_argument('-cW', type = int, default = 0)
+
+
+args = parser.parse_args()
+
+kn = args.K
+pn = args.P
+cn = args.C
+wn = args.W
+
+
+
+#print kn, pn, wn, cn
+n = 0;
+f = None
+
+if kn > 0:
+    f = subkn
+    n = kn
+if pn > 0:
+    f = subpn
+    n = pn
+if cn > 0:
+    f = subcn
+    n = cn
+if wn > 0:
+    f = subwn
+    n = wn
+    
+ckn = args.cK
+cpn = args.cP
+ccn = args.cC
+cwn = args.cW
+
+#print kn, pn, wn, cn
+cn = 0;
+cf = None
+
+if ckn > 0:
+    cf = subkn
+    cn = ckn
+if cpn > 0:
+    cf = subpn
+    cn = cpn
+if ccn > 0:
+    cf = subcn
+    cn = ccn
+if cwn > 0:
+    cf = subwn
+    cn = cwn
+ 
+stdout.write(str(extendg(stdin, f, cf, n, cn)))
