@@ -41,7 +41,7 @@ Output:
     False if g does not contain Wn
 """
 
-def subwn(g, n):
+def subwn(g, n, v = None):
 
     found = False
 

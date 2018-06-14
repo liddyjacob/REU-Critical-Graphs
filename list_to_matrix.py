@@ -31,6 +31,8 @@ list_to_matrix:
 
 def list_to_matrix(adjlist):
 
+
+
     matrixstr = '';
 
     for lnode in range(0, len(adjlist)):

@@ -6,7 +6,7 @@ subpn(g,n)
 Check whether g contains path with n vertices
 """
 
-def subpn(g,n):
+def subpn(g,n, v = None):
 	if len(g.path_length_hist()[0])>=n:
 		return True
 	else:

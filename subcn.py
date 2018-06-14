@@ -4,7 +4,6 @@ from subkn import subkn
 
 def is_path(g, (v1, v2), n, path = None):
 
-
     if len(path) == 1:
         path.append(v1)
         path.append(v2)
@@ -20,7 +19,7 @@ def is_path(g, (v1, v2), n, path = None):
 
     return False
 
-def subcn(g, n):
+def subcn(g, n, v = None):
     if n == 2: return subkn(g, 2)
     if n == 3: return subkn(g, 3)
 

@@ -14,5 +14,6 @@ Output:
     False if g does not contain kn
 """
 
-def subkn(g, n):
+def subkn(g, n, v = None):
     return g.omega() >= n
+
