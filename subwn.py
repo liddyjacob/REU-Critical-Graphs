@@ -25,7 +25,7 @@ def check_wn_on_v(g, v, n):
     tire_g = g.induced_subgraph(neighbors)
 
     #NOW CHECK FOR CYCLE OF LENGTH N IN TIRE!
-    return subcn(tire_g, n)
+    return subcn(tire_g, n - 1)
 
 """
 subpn(g, n)
@@ -46,7 +46,7 @@ def subwn(g, n):
     found = False
 
     for v in g.vs():
-        if g.degree(v) >= n:
+        if g.degree(v) >= n - 1:
             found = check_wn_on_v(g, v, n)
 
         if found: return True
