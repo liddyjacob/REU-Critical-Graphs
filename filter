@@ -30,14 +30,18 @@ f = None
 
 if kn > 0:
     f = subkn
+    n = kn
 if pn > 0:
     f = subpn
+    n = pn
 if cn > 0:
     f = subcn
+    n = cn
 if wn > 0:
-    pass
-    #f = subwn
+    f = subwn
+    n = wn
+    
 
-stdout.write(str(filterg(stdin, f)))
+stdout.write(str(filterg(stdin, f, n)))
 #for line in stdin:
     #print line

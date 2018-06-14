@@ -6,12 +6,12 @@ Split nauty adjacency lists from a file into strings.
 Returns a list of strings.
 """
 
-def split_nlists(filename):
+def split_nlists(nfile):
 
 
     nlists_str = '';
-    with open(filename, 'r') as nfile:
-        nlists_str = nfile.read()
+
+    nlists_str = nfile.read()
 
     gloc = 0;
     strlist = list()
